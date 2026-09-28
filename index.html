@@ -3,62 +3,311 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pay Sudhakar Pawar</title>
-  <meta name="description" content="Pay ₹280 to Sudhakar Pawar via Google Pay / UPI">
+  <title>Cycling Stories — Sudhakar Pawar</title>
+  <meta name="description" content="Cycling Stories by Sudhakar Pawar. Buy the book for ₹280 via Google Pay / UPI.">
+  <meta property="og:title" content="Cycling Stories — Sudhakar Pawar">
+  <meta property="og:description" content="Tales from the saddle. Get your copy for ₹280 via Google Pay / UPI.">
+  <meta name="theme-color" content="#f4ecdf">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f7fb; --card: #ffffff; --text: #1a1d24; --muted: #5f6673;
-      --accent: #1a73e8; --accent-text: #ffffff; --border: #e2e6ee;
+      --bg: #f4ecdf;
+      --paper: #fffaf2;
+      --ink: #1f2a2e;
+      --muted: #5d6a6d;
+      --road: #2b3437;
+      --accent: #e4572e;
+      --accent-ink: #ffffff;
+      --leaf: #3f7d5c;
+      --sun: #f3a712;
+      --border: #e3d6c2;
+      --shadow: 0 20px 50px -20px rgba(31, 42, 46, 0.35);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0f1115; --card: #181b22; --text: #e8eaef; --muted: #9aa1ad;
-        --accent: #8ab4f8; --accent-text: #0f1115; --border: #2a2f3a;
+        --bg: #12181a;
+        --paper: #1b2427;
+        --ink: #f1ebe0;
+        --muted: #a3afb1;
+        --road: #0b0f10;
+        --accent: #ff7a50;
+        --accent-ink: #12181a;
+        --leaf: #6fbf8e;
+        --sun: #f7b733;
+        --border: #2c383b;
+        --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.7);
       }
     }
+
     * { box-sizing: border-box; }
+    html, body { margin: 0; }
     body {
-      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
-      padding: 16px; background: var(--bg); color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
     }
+
+    /* ---------- Hero scene ---------- */
+    .scene {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--sun) 18%, var(--bg)) 0%, var(--bg) 100%);
+    }
+    .sun {
+      position: absolute; top: 34px; right: 12%;
+      width: 70px; height: 70px; border-radius: 50%;
+      background: var(--sun); opacity: .85;
+      box-shadow: 0 0 60px 10px color-mix(in srgb, var(--sun) 45%, transparent);
+    }
+    .hills { position: absolute; bottom: 38px; left: 0; width: 200%; height: 110px; animation: drift 40s linear infinite; }
+    .hills.back { opacity: .45; animation-duration: 70s; bottom: 50px; }
+    .road {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: var(--road);
+    }
+    .road::after {
+      content: ""; position: absolute; top: 18px; left: 0; width: 200%; height: 4px;
+      background: repeating-linear-gradient(90deg, var(--sun) 0 34px, transparent 34px 70px);
+      animation: drift 2.4s linear infinite;
+    }
+    .rider {
+      position: absolute; bottom: 30px; left: 50%; width: 170px; transform: translateX(-50%);
+      animation: bob .6s ease-in-out infinite alternate;
+    }
+    .wheel { transform-box: fill-box; transform-origin: center; animation: spin .8s linear infinite; }
+    .pedal { transform-box: view-box; transform-origin: 82px 78px; animation: spin 1.2s linear infinite; }
+
+    @keyframes drift { to { transform: translateX(-50%); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes bob { to { transform: translate(-50%, -2px); } }
+
+    /* ---------- Layout ---------- */
+    .wrap {
+      max-width: 1040px; margin: 0 auto; padding: 0 16px 48px;
+      display: grid; gap: 28px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 860px) {
+      .scene { height: 280px; }
+      .rider { width: 220px; }
+      .wrap { grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: start; padding-top: 8px; }
+    }
+
+    /* ---------- Book ---------- */
+    .book-col { display: flex; flex-direction: column; align-items: center; gap: 22px; margin-top: -40px; }
+    @media (min-width: 860px) { .book-col { margin-top: -70px; } }
+
+    .book {
+      position: relative; width: min(170px, 46vw); aspect-ratio: 2 / 3;
+      border-radius: 4px 12px 12px 4px;
+      background:
+        radial-gradient(circle at 82% 40%, color-mix(in srgb, var(--sun) 90%, #fff) 0 12px, transparent 13px),
+        linear-gradient(180deg, #2f6f8f 0%, #3f7d5c 58%, #2b3437 58.5%, #2b3437 100%);
+      box-shadow: var(--shadow), inset 6px 0 0 rgba(0,0,0,.18);
+      color: #fffaf2; padding: 16px 12px 14px 20px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      transform: perspective(900px) rotateY(-10deg);
+      transition: transform .4s ease;
+    }
+    .book:hover { transform: perspective(900px) rotateY(0deg); }
+    .book::before {
+      content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,.18);
+    }
+    .book .kicker { font-size: .55rem; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+    .book .title { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(1.3rem, 5.5vw, 2.1rem); line-height: 1.02; margin: 6px 0 0; }
+    .book svg { width: 100%; height: auto; }
+    .book .author { font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; opacity: .9; }
+
+    .quote {
+      max-width: 420px; text-align: center; font-family: Fraunces, Georgia, serif; font-size: 1.05rem;
+      color: var(--muted); margin: 0;
+    }
+
+    /* ---------- Pay card ---------- */
     .card {
-      width: 100%; max-width: 380px; background: var(--card); border: 1px solid var(--border);
-      border-radius: 16px; padding: 28px 24px; text-align: center;
+      background: var(--paper); border: 1px solid var(--border); border-radius: 20px;
+      padding: 26px 22px; box-shadow: var(--shadow);
     }
-    h1 { font-size: 1.25rem; margin: 0 0 4px; }
-    .upi { color: var(--muted); font-size: 0.9rem; margin: 0 0 20px; word-break: break-all; }
-    .amount { font-size: 2.5rem; font-weight: 700; margin: 0 0 24px; }
+    @media (min-width: 860px) { .card { padding: 32px 30px; margin-top: 12px; } }
+
+    .eyebrow { color: var(--accent); font-weight: 600; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin: 0; }
+    h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(1.9rem, 6vw, 2.6rem); line-height: 1.05; margin: 6px 0 10px; }
+    .blurb { color: var(--muted); margin: 0 0 18px; }
+
+    .features { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 8px; }
+    .features li { display: flex; gap: 10px; align-items: flex-start; }
+    .features svg { flex: none; width: 20px; height: 20px; margin-top: 2px; color: var(--leaf); }
+
+    .price-row {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+      padding: 14px 0; border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border); margin-bottom: 18px;
+    }
+    .price { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 2.4rem; }
+    .price-label { color: var(--muted); font-size: .9rem; }
+
     .btn {
-      display: block; width: 100%; padding: 14px; border-radius: 10px; font-size: 1rem;
-      font-weight: 600; text-decoration: none; margin-bottom: 10px;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; min-height: 52px; padding: 14px 18px; border-radius: 14px;
+      font: 600 1rem Inter, system-ui, sans-serif; text-decoration: none; cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
     }
-    .primary { background: var(--accent); color: var(--accent-text); }
-    .secondary { border: 1px solid var(--border); color: var(--text); }
-    .qr { margin: 20px auto 8px; width: 200px; height: 200px; background: #fff; padding: 8px; border-radius: 8px; }
+    .btn:active { transform: translateY(1px) scale(.99); }
+    .btn svg { width: 22px; height: 22px; }
+    .primary { background: var(--accent); color: var(--accent-ink); border: none; box-shadow: 0 10px 24px -10px var(--accent); }
+    .primary:hover { box-shadow: 0 14px 28px -10px var(--accent); }
+    .secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--border); margin-top: 10px; }
+    .secondary:hover { border-color: var(--ink); }
+
+    .payee { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 16px; font-size: .9rem; color: var(--muted); flex-wrap: wrap; }
+    .payee code { font: 500 .9rem ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--ink); word-break: break-all; }
+    .copy { background: none; border: 1px solid var(--border); color: var(--ink); border-radius: 8px; padding: 4px 10px; font: 500 .8rem Inter, sans-serif; cursor: pointer; }
+
+    /* QR: prominent on desktop, tucked away on phones (they tap the button) */
+    .qr-box { margin-top: 20px; }
+    .qr-box summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: .9rem; list-style: none; text-align: center; }
+    .qr-box summary::-webkit-details-marker { display: none; }
+    .qr {
+      margin: 14px auto 6px; width: 200px; height: 200px; background: #fff; padding: 10px; border-radius: 14px;
+      border: 1px solid var(--border);
+    }
     .qr img { width: 100%; height: 100%; display: block; }
-    .hint { color: var(--muted); font-size: 0.85rem; margin: 0; }
-    .copy { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 0.85rem; padding: 4px; }
+    .qr-hint { text-align: center; color: var(--muted); font-size: .85rem; margin: 0; }
+
+    .after { margin-top: 18px; font-size: .85rem; color: var(--muted); text-align: center; }
+
+    footer { text-align: center; color: var(--muted); font-size: .8rem; padding: 0 16px 28px; }
+
+    @media (min-width: 860px) {
+      .book { width: 240px; padding: 22px 18px 18px 24px; }
+      .book .kicker { font-size: .7rem; letter-spacing: .18em; }
+      .book .author { font-size: .8rem; letter-spacing: .1em; }
+    }
+
+    /* Sticky pay bar on phones, hidden once the main button is on screen */
+    .sticky {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      background: var(--paper); border-top: 1px solid var(--border);
+      box-shadow: 0 -10px 30px -12px rgba(0,0,0,.25);
+      transform: translateY(0); transition: transform .25s ease;
+    }
+    .sticky.hide { transform: translateY(110%); }
+    .sticky .price { font-size: 1.5rem; }
+    .sticky .btn { flex: 1; min-height: 46px; padding: 10px 14px; }
+    body { padding-bottom: 80px; }
+    @media (min-width: 860px) { .sticky { display: none; } body { padding-bottom: 0; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>Sudhakar Pawar</h1>
-    <p class="upi">9850672020@ybl <button class="copy" id="copy" type="button">Copy</button></p>
-    <p class="amount">₹280</p>
+  <!-- Animated riding scene -->
+  <div class="scene" aria-hidden="true">
+    <div class="sun"></div>
+    <svg class="hills back" viewBox="0 0 1200 110" preserveAspectRatio="none">
+      <path fill="var(--leaf)" d="M0 110V60c80-40 160-50 240-20s170 30 250-10 160-40 260 0 180 40 250 10 150-40 200-20v90z"/>
+    </svg>
+    <svg class="hills" viewBox="0 0 1200 110" preserveAspectRatio="none">
+      <path fill="var(--leaf)" d="M0 110V80c100-30 180-40 280-10s200 20 300-15 170-20 260 10 170 30 240 5 90-25 120-15v55z"/>
+    </svg>
+    <div class="road"></div>
 
-    <a class="btn primary" id="gpay" href="#">Pay with Google Pay</a>
-    <a class="btn secondary" id="upi" href="#">Pay with any UPI app</a>
+    <svg class="rider" viewBox="0 0 170 110" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <!-- wheels -->
+      <g class="wheel"><circle cx="38" cy="78" r="26"/><path d="M38 52v52M12 78h52M20 60l36 36M56 60L20 96" stroke-width="1.5"/></g>
+      <g class="wheel"><circle cx="132" cy="78" r="26"/><path d="M132 52v52M106 78h52M114 60l36 36M150 60l-36 36" stroke-width="1.5"/></g>
+      <!-- frame -->
+      <path d="M38 78L66 44h50L82 78z" stroke="var(--accent)" stroke-width="5"/>
+      <path d="M82 78L60 34M116 44L132 78M112 32l6 14" stroke="var(--accent)" stroke-width="5"/>
+      <path d="M52 32h16M106 30h14" stroke-width="5"/>
+      <!-- crank -->
+      <g class="pedal"><path d="M82 78l10 8M82 78l-10-8" stroke-width="3"/></g>
+      <circle cx="82" cy="78" r="5" fill="var(--ink)"/>
+      <!-- rider -->
+      <path d="M60 30L90 16" stroke-width="6"/>
+      <path d="M90 16l22 14" stroke-width="4"/>
+      <path d="M62 32l12 22 8 24" stroke-width="5"/>
+      <circle cx="98" cy="10" r="8" fill="var(--ink)" stroke="none"/>
+    </svg>
+  </div>
 
-    <div class="qr"><img src="upi-qr.svg" alt="UPI QR code to pay ₹280 to Sudhakar Pawar"></div>
-    <p class="hint">On desktop? Scan with any UPI app.</p>
-  </main>
+  <div class="wrap">
+    <!-- Book cover -->
+    <section class="book-col" aria-label="Book">
+      <div class="book" role="img" aria-label="Cover of Cycling Stories by Sudhakar Pawar">
+        <div>
+          <div class="kicker">Tales from the saddle</div>
+          <div class="title">Cycling<br>Stories</div>
+        </div>
+        <svg viewBox="0 0 170 90" fill="none" stroke="#fffaf2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="36" cy="62" r="24"/><circle cx="134" cy="62" r="24"/>
+          <path d="M36 62L62 30h50L80 62z"/><path d="M80 62L58 20M112 30l22 32M108 18l6 12M50 18h16M102 16h14"/>
+        </svg>
+        <div class="author">Sudhakar Pawar</div>
+      </div>
+      <p class="quote">“Every road has a story — you just have to pedal far enough to hear it.”</p>
+    </section>
+
+    <!-- Purchase -->
+    <section class="card" aria-labelledby="h">
+      <p class="eyebrow">New book</p>
+      <h1 id="h">Cycling Stories</h1>
+      <p class="blurb">True tales of climbs, crashes, long highways and the people met along the way — written for anyone who has ever felt the wind on two wheels.</p>
+
+      <ul class="features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Real rides, real roads, real people</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>For beginners and seasoned riders alike</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Pay securely with Google Pay or any UPI app</li>
+      </ul>
+
+      <div class="price-row">
+        <span class="price">₹280</span>
+        <span class="price-label">One copy · UPI</span>
+      </div>
+
+      <a class="btn primary" id="gpay" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M5.5 17L9 10h7l-4 7zM9 10L8 7M16 10l2.5 7M15 6h2"/></svg>
+        Pay ₹280 with Google Pay
+      </a>
+      <a class="btn secondary" id="upi" href="#">Pay with any UPI app</a>
+
+      <div class="payee">
+        <span>To <strong>Sudhakar Pawar</strong> · <code>9850672020@ybl</code></span>
+        <button class="copy" id="copy" type="button">Copy UPI ID</button>
+      </div>
+
+      <details class="qr-box" id="qrbox">
+        <summary>Show QR code to scan</summary>
+        <div class="qr"><img src="upi-qr.svg" alt="UPI QR code to pay ₹280 to Sudhakar Pawar" width="200" height="200"></div>
+        <p class="qr-hint">Scan with Google Pay, PhonePe, Paytm or any UPI app.</p>
+      </details>
+
+      <p class="after">After paying, share the payment screenshot with Sudhakar to receive your copy.</p>
+    </section>
+  </div>
+
+  <div class="sticky" id="sticky">
+    <span class="price">₹280</span>
+    <a class="btn primary" id="gpay-sticky" href="#">Buy with Google Pay</a>
+  </div>
+
+  <footer>© Sudhakar Pawar · Cycling Stories</footer>
 
   <script>
-    const PARAMS = "pa=9850672020@ybl&pn=Sudhakar%20Pawar&am=280.00&cu=INR&tn=Payment";
+    const PARAMS = "pa=9850672020@ybl&pn=Sudhakar%20Pawar&am=280.00&cu=INR&tn=Cycling%20Stories%20book";
     const upiLink = "upi://pay?" + PARAMS;
-    const isAndroid = /Android/i.test(navigator.userAgent);
-    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const ua = navigator.userAgent;
+    const isAndroid = /Android/i.test(ua);
+    const isIOS = /iPhone|iPad|iPod/i.test(ua);
+    const isMobile = isAndroid || isIOS;
 
     // Android: intent targets Google Pay directly. iOS: GPay's own scheme.
     const gpayLink = isAndroid
@@ -67,11 +316,31 @@
 
     document.getElementById("gpay").href = gpayLink;
     document.getElementById("upi").href = upiLink;
+    document.getElementById("gpay-sticky").href = gpayLink;
+
+    // Hide the sticky bar while the main pay button is visible.
+    const sticky = document.getElementById("sticky");
+    new IntersectionObserver(([entry]) => {
+      sticky.classList.toggle("hide", entry.isIntersecting);
+    }).observe(document.getElementById("gpay"));
+
+    // Desktop can't open UPI apps: show the QR up front and make the buttons reveal it.
+    if (!isMobile) {
+      const box = document.getElementById("qrbox");
+      box.open = true;
+      box.querySelector("summary").textContent = "Scan with your phone to pay";
+      for (const id of ["gpay", "upi", "gpay-sticky"]) {
+        document.getElementById(id).addEventListener("click", (e) => {
+          e.preventDefault();
+          box.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+      }
+    }
 
     document.getElementById("copy").addEventListener("click", async (e) => {
       try {
         await navigator.clipboard.writeText("9850672020@ybl");
-        e.target.textContent = "Copied";
+        e.target.textContent = "Copied ✓";
       } catch {
         e.target.textContent = "Copy failed";
       }
