@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cycling Stories — Sudhakar Pawar</title>
-  <meta name="description" content="Cycling Stories by Sudhakar Pawar. Buy the book for ₹280 via Google Pay / UPI.">
-  <meta property="og:title" content="Cycling Stories — Sudhakar Pawar">
+  <title>A book of cycling stories · Sudhakar Pawar</title>
+  <meta name="description" content="A book of cycling stories by Sudhakar Pawar. Buy your copy for ₹280 via Google Pay / UPI.">
+  <meta property="og:title" content="A book of cycling stories · Sudhakar Pawar">
   <meta property="og:description" content="Tales from the saddle. Get your copy for ₹280 via Google Pay / UPI.">
   <meta name="theme-color" content="#f4ecdf">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,31 +102,22 @@
     .book-col { display: flex; flex-direction: column; align-items: center; gap: 22px; margin-top: -40px; }
     @media (min-width: 860px) { .book-col { margin-top: -70px; } }
 
-    .book {
-      position: relative; width: min(170px, 46vw); aspect-ratio: 2 / 3;
-      border-radius: 4px 12px 12px 4px;
-      background:
-        radial-gradient(circle at 82% 40%, color-mix(in srgb, var(--sun) 90%, #fff) 0 12px, transparent 13px),
-        linear-gradient(180deg, #2f6f8f 0%, #3f7d5c 58%, #2b3437 58.5%, #2b3437 100%);
-      box-shadow: var(--shadow), inset 6px 0 0 rgba(0,0,0,.18);
-      color: #fffaf2; padding: 16px 12px 14px 20px;
-      display: flex; flex-direction: column; justify-content: space-between;
-      transform: perspective(900px) rotateY(-10deg);
-      transition: transform .4s ease;
+    .quote-card {
+      position: relative; width: 100%; max-width: 440px;
+      background: var(--paper); border: 1px solid var(--border); border-radius: 20px;
+      padding: 30px 26px 26px; box-shadow: var(--shadow); text-align: center; overflow: hidden;
     }
-    .book:hover { transform: perspective(900px) rotateY(0deg); }
-    .book::before {
-      content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,.18);
+    .quote-card::before {
+      content: "\201C"; position: absolute; top: 6px; left: 16px;
+      font: 800 7rem/1 Fraunces, Georgia, serif; color: var(--accent); opacity: .18;
     }
-    .book .kicker { font-size: .55rem; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
-    .book .title { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(1.3rem, 5.5vw, 2.1rem); line-height: 1.02; margin: 6px 0 0; }
-    .book svg { width: 100%; height: auto; }
-    .book .author { font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; opacity: .9; }
-
+    .quote-card svg { width: 150px; height: auto; margin: 0 auto 14px; display: block; color: var(--accent); }
+    .quote-card .wheel-s { transform-box: fill-box; transform-origin: center; animation: spin 3s linear infinite; }
     .quote {
-      max-width: 420px; text-align: center; font-family: Fraunces, Georgia, serif; font-size: 1.05rem;
-      color: var(--muted); margin: 0;
+      font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(1.2rem, 4.5vw, 1.45rem);
+      line-height: 1.35; color: var(--ink); margin: 0;
     }
+    .quote-by { margin: 12px 0 0; color: var(--muted); font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; }
 
     /* ---------- Pay card ---------- */
     .card {
@@ -182,11 +173,6 @@
 
     footer { text-align: center; color: var(--muted); font-size: .8rem; padding: 0 16px 28px; }
 
-    @media (min-width: 860px) {
-      .book { width: 240px; padding: 22px 18px 18px 24px; }
-      .book .kicker { font-size: .7rem; letter-spacing: .18em; }
-      .book .author { font-size: .8rem; letter-spacing: .1em; }
-    }
 
     /* Sticky pay bar on phones, hidden once the main button is on screen */
     .sticky {
@@ -240,27 +226,24 @@
   </div>
 
   <div class="wrap">
-    <!-- Book cover -->
-    <section class="book-col" aria-label="Book">
-      <div class="book" role="img" aria-label="Cover of Cycling Stories by Sudhakar Pawar">
-        <div>
-          <div class="kicker">Tales from the saddle</div>
-          <div class="title">Cycling<br>Stories</div>
-        </div>
-        <svg viewBox="0 0 170 90" fill="none" stroke="#fffaf2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="36" cy="62" r="24"/><circle cx="134" cy="62" r="24"/>
+    <!-- Quote -->
+    <section class="book-col" aria-label="Quote">
+      <figure class="quote-card" style="margin:0">
+        <svg viewBox="0 0 170 90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <g class="wheel-s"><circle cx="36" cy="62" r="24"/><path d="M36 38v48M12 62h48" stroke-width="1.5"/></g>
+          <g class="wheel-s"><circle cx="134" cy="62" r="24"/><path d="M134 38v48M110 62h48" stroke-width="1.5"/></g>
           <path d="M36 62L62 30h50L80 62z"/><path d="M80 62L58 20M112 30l22 32M108 18l6 12M50 18h16M102 16h14"/>
         </svg>
-        <div class="author">Sudhakar Pawar</div>
-      </div>
-      <p class="quote">“Every road has a story — you just have to pedal far enough to hear it.”</p>
+        <blockquote class="quote" style="margin:0">“Every road has a story. You just have to pedal far enough to hear it.”</blockquote>
+        <figcaption class="quote-by">Stories from the saddle</figcaption>
+      </figure>
     </section>
 
     <!-- Purchase -->
     <section class="card" aria-labelledby="h">
       <p class="eyebrow">New book</p>
-      <h1 id="h">Cycling Stories</h1>
-      <p class="blurb">True tales of climbs, crashes, long highways and the people met along the way — written for anyone who has ever felt the wind on two wheels.</p>
+      <h1 id="h">A book of cycling stories</h1>
+      <p class="blurb">True tales of climbs, crashes, long highways and the people met along the way. Written for anyone who has ever felt the wind on two wheels.</p>
 
       <ul class="features">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Real rides, real roads, real people</li>
@@ -299,10 +282,10 @@
     <a class="btn primary" id="gpay-sticky" href="#">Buy with Google Pay</a>
   </div>
 
-  <footer>© Sudhakar Pawar · Cycling Stories</footer>
+  <footer>© Sudhakar Pawar</footer>
 
   <script>
-    const PARAMS = "pa=9850672020@ybl&pn=Sudhakar%20Pawar&am=280.00&cu=INR&tn=Cycling%20Stories%20book";
+    const PARAMS = "pa=9850672020@ybl&pn=Sudhakar%20Pawar&am=280.00&cu=INR&tn=Book%20payment";
     const upiLink = "upi://pay?" + PARAMS;
     const ua = navigator.userAgent;
     const isAndroid = /Android/i.test(ua);
