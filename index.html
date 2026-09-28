@@ -1,43 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="mr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>All India Permit · Sudhakar Pawar</title>
-  <meta name="description" content="All India Permit, a book of cycling stories by Sudhakar Pawar. Buy your copy for ₹260 via Google Pay / UPI.">
-  <meta property="og:title" content="All India Permit · Sudhakar Pawar">
-  <meta property="og:description" content="Tales from the saddle. Get your copy for ₹260 via Google Pay / UPI.">
-  <meta name="theme-color" content="#f4ecdf">
+  <title>ऑल India परमिट · सुधाकर पवार</title>
+  <meta name="description" content="ऑल India परमिट: मुलखावेगळ्या अनुभवांच्या जगावेगळ्या कथा. 21,000 km cycling journey by Sudhakar Pawar. Buy for ₹260 via Google Pay / UPI.">
+  <meta property="og:title" content="ऑल India परमिट · सुधाकर पवार">
+  <meta property="og:description" content="मुलखावेगळ्या अनुभवांच्या जगावेगळ्या कथा. ₹260, pay via Google Pay / UPI.">
+  <meta property="og:image" content="https://allindiapermit.github.io/img/cover-front.jpg">
+  <meta name="theme-color" content="#efe6d3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi&family=Kalam:wght@700&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f4ecdf;
-      --paper: #fffaf2;
-      --ink: #1f2a2e;
-      --muted: #5d6a6d;
-      --road: #2b3437;
-      --accent: #e4572e;
+      --bg: #efe6d3;
+      --paper: #faf5ea;
+      --ink: #2b2723;
+      --muted: #6b6258;
+      --accent: #a8322b;
       --accent-ink: #ffffff;
-      --leaf: #3f7d5c;
-      --sun: #f3a712;
-      --border: #e3d6c2;
-      --shadow: 0 20px 50px -20px rgba(31, 42, 46, 0.35);
+      --sea: #3a86b8;
+      --sand: #dccaa5;
+      --border: #e0d3b8;
+      --shadow: 0 22px 50px -24px rgba(43, 39, 35, 0.45);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #12181a;
-        --paper: #1b2427;
-        --ink: #f1ebe0;
-        --muted: #a3afb1;
-        --road: #0b0f10;
-        --accent: #ff7a50;
-        --accent-ink: #12181a;
-        --leaf: #6fbf8e;
-        --sun: #f7b733;
-        --border: #2c383b;
-        --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.7);
+        --bg: #1a1714;
+        --paper: #24201b;
+        --ink: #f0e8da;
+        --muted: #b0a594;
+        --accent: #e0675d;
+        --accent-ink: #1a1714;
+        --sea: #5aa3d4;
+        --sand: #4a4032;
+        --border: #3a332a;
+        --shadow: 0 22px 50px -24px rgba(0, 0, 0, 0.8);
       }
     }
 
@@ -47,40 +46,53 @@
       min-height: 100vh;
       background: var(--bg);
       color: var(--ink);
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.5;
+      font-family: Mukta, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
       overflow-x: hidden;
+      padding-bottom: 80px;
     }
+    img { max-width: 100%; display: block; }
 
-    /* ---------- Hero scene ---------- */
+    /* ---------- Hero scene: coastal road to Kanyakumari, ink-sketch style ---------- */
     .scene {
-      position: relative;
-      height: 220px;
+      position: relative; height: 190px; overflow: hidden;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 70%, var(--bg)) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .sea {
+      position: absolute; left: 0; right: 0; bottom: 46px; height: 58px;
+      background: color-mix(in srgb, var(--sea) 70%, var(--paper));
       overflow: hidden;
-      background: linear-gradient(180deg, color-mix(in srgb, var(--sun) 18%, var(--bg)) 0%, var(--bg) 100%);
     }
-    .sun {
-      position: absolute; top: 34px; right: 12%;
-      width: 70px; height: 70px; border-radius: 50%;
-      background: var(--sun); opacity: .85;
-      box-shadow: 0 0 60px 10px color-mix(in srgb, var(--sun) 45%, transparent);
+    .sea::before, .sea::after {
+      content: ""; position: absolute; left: 0; width: 200%; height: 3px;
+      background: repeating-linear-gradient(90deg, color-mix(in srgb, var(--paper) 70%, transparent) 0 18px, transparent 18px 46px);
+      animation: drift 9s linear infinite;
     }
-    .hills { position: absolute; bottom: 38px; left: 0; width: 200%; height: 110px; animation: drift 40s linear infinite; }
-    .hills.back { opacity: .45; animation-duration: 70s; bottom: 50px; }
+    .sea::before { top: 16px; }
+    .sea::after { top: 36px; animation-duration: 13s; opacity: .7; }
+    .islet { position: absolute; bottom: 96px; right: 9%; width: 120px; color: var(--ink); opacity: .8; }
     .road {
-      position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: var(--road);
+      position: absolute; left: 0; right: 0; bottom: 0; height: 46px; background: var(--sand);
+      border-top: 2px solid color-mix(in srgb, var(--ink) 55%, transparent);
     }
     .road::after {
-      content: ""; position: absolute; top: 18px; left: 0; width: 200%; height: 4px;
-      background: repeating-linear-gradient(90deg, var(--sun) 0 34px, transparent 34px 70px);
-      animation: drift 2.4s linear infinite;
+      content: ""; position: absolute; top: 20px; left: 0; width: 200%; height: 2px;
+      background: repeating-linear-gradient(90deg, color-mix(in srgb, var(--ink) 45%, transparent) 0 10px, transparent 10px 26px);
+      animation: drift 2.2s linear infinite;
     }
+    .milestone {
+      position: absolute; bottom: 8px; right: 6%; width: 58px; height: 64px;
+      background: var(--paper); border: 2px solid var(--ink); border-radius: 26px 26px 4px 4px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-size: .5rem; font-weight: 700; line-height: 1.1; color: var(--ink); text-align: center;
+    }
+    .milestone b { font-size: 1.1rem; }
     .rider {
-      position: absolute; bottom: 30px; left: 50%; width: 170px; transform: translateX(-50%);
+      position: absolute; bottom: 4px; left: 50%; width: 150px; transform: translateX(-50%);
       animation: bob .6s ease-in-out infinite alternate;
     }
-    .wheel { transform-box: fill-box; transform-origin: center; animation: spin .8s linear infinite; }
-    .pedal { transform-box: view-box; transform-origin: 82px 78px; animation: spin 1.2s linear infinite; }
+    .wheel { transform-box: fill-box; transform-origin: center; animation: spin .9s linear infinite; }
 
     @keyframes drift { to { transform: translateX(-50%); } }
     @keyframes spin { to { transform: rotate(360deg); } }
@@ -88,107 +100,135 @@
 
     /* ---------- Layout ---------- */
     .wrap {
-      max-width: 1040px; margin: 0 auto; padding: 0 16px 48px;
-      display: grid; gap: 28px;
-      grid-template-columns: 1fr;
+      max-width: 1080px; margin: 0 auto; padding: 24px 16px 40px;
+      display: grid; gap: 28px; grid-template-columns: 1fr;
     }
-    @media (min-width: 860px) {
-      .scene { height: 280px; }
-      .rider { width: 220px; }
-      .wrap { grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: start; padding-top: 8px; }
+    @media (min-width: 880px) {
+      .scene { height: 240px; }
+      .rider { width: 190px; }
+      .milestone { width: 70px; height: 78px; font-size: .6rem; right: 12%; }
+      .milestone b { font-size: 1.35rem; }
+      .islet { width: 170px; right: 20%; }
+      .wrap { grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; padding-top: 40px; }
+      .cover-col { position: sticky; top: 24px; }
     }
 
-    /* ---------- Book ---------- */
-    .book-col { display: flex; flex-direction: column; align-items: center; gap: 22px; margin-top: -40px; }
-    @media (min-width: 860px) { .book-col { margin-top: -70px; } }
+    /* ---------- Cover ---------- */
+    .cover-col { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .cover {
+      width: min(100%, 460px); aspect-ratio: 1; border: 0; padding: 0; border-radius: 18px; overflow: hidden;
+      background: #e9dfca; box-shadow: var(--shadow); cursor: zoom-in;
+    }
+    .cover img { width: 100%; height: 100%; object-fit: cover; }
+    .tabs { display: inline-flex; background: var(--paper); border: 1px solid var(--border); border-radius: 999px; padding: 4px; }
+    .tabs button {
+      font: 600 .9rem Mukta, sans-serif; border: 0; background: transparent; color: var(--muted);
+      padding: 6px 16px; border-radius: 999px; cursor: pointer;
+    }
+    .tabs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 
-    .quote-card {
-      position: relative; width: 100%; max-width: 440px;
-      background: var(--paper); border: 1px solid var(--border); border-radius: 20px;
-      padding: 30px 26px 26px; box-shadow: var(--shadow); text-align: center; overflow: hidden;
-    }
-    .quote-card::before {
-      content: "\201C"; position: absolute; top: 6px; left: 16px;
-      font: 800 7rem/1 Fraunces, Georgia, serif; color: var(--accent); opacity: .18;
-    }
-    .quote-card svg { width: 150px; height: auto; margin: 0 auto 14px; display: block; color: var(--accent); }
-    .quote-card .wheel-s { transform-box: fill-box; transform-origin: center; animation: spin 3s linear infinite; }
-    .quote {
-      font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(1.2rem, 4.5vw, 1.45rem);
-      line-height: 1.35; color: var(--ink); margin: 0;
-    }
-    .quote-by { margin: 12px 0 0; color: var(--muted); font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; }
-
-    /* ---------- Pay card ---------- */
+    /* ---------- Buy card ---------- */
     .card {
-      background: var(--paper); border: 1px solid var(--border); border-radius: 20px;
+      background: var(--paper); border: 1px solid var(--border); border-radius: 22px;
       padding: 26px 22px; box-shadow: var(--shadow);
     }
-    @media (min-width: 860px) { .card { padding: 32px 30px; margin-top: 12px; } }
+    @media (min-width: 880px) { .card { padding: 32px 30px; } }
 
-    .eyebrow { color: var(--accent); font-weight: 600; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin: 0; }
-    h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(1.9rem, 6vw, 2.6rem); line-height: 1.05; margin: 6px 0 10px; }
-    .byline { margin: -4px 0 12px; color: var(--muted); font-weight: 500; }
-    .blurb { color: var(--muted); margin: 0 0 18px; }
+    .eyebrow { color: var(--accent); font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; margin: 0; }
+    h1 {
+      font-family: Kalam, "Tiro Devanagari Marathi", cursive; font-weight: 700;
+      font-size: clamp(2.3rem, 9vw, 3.2rem); line-height: 1.1; margin: 6px 0 6px;
+    }
+    .subtitle { font-family: "Tiro Devanagari Marathi", Georgia, serif; color: var(--accent); font-size: 1.15rem; margin: 0 0 6px; line-height: 1.45; }
+    .byline { margin: 0 0 18px; color: var(--muted); font-weight: 600; }
 
-    .features { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 8px; }
-    .features li { display: flex; gap: 10px; align-items: flex-start; }
-    .features svg { flex: none; width: 20px; height: 20px; margin-top: 2px; color: var(--leaf); }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 20px; }
+    .stat {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 14px;
+      padding: 10px 8px; text-align: center; line-height: 1.25;
+    }
+    .stat b { display: block; font-size: 1.15rem; }
+    .stat span { font-size: .78rem; color: var(--muted); }
 
     .price-row {
       display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
       padding: 14px 0; border-top: 1px dashed var(--border); border-bottom: 1px dashed var(--border); margin-bottom: 18px;
     }
-    .price { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 2.4rem; }
-    .price-label { color: var(--muted); font-size: .9rem; }
+    .price { font-weight: 700; font-size: 2.4rem; line-height: 1; }
+    .price-label { color: var(--muted); font-size: .9rem; text-align: right; line-height: 1.35; }
 
     .btn {
       display: flex; align-items: center; justify-content: center; gap: 10px;
-      width: 100%; min-height: 52px; padding: 14px 18px; border-radius: 14px;
-      font: 600 1rem Inter, system-ui, sans-serif; text-decoration: none; cursor: pointer;
+      width: 100%; min-height: 52px; padding: 12px 18px; border-radius: 14px;
+      font: 700 1.05rem Mukta, system-ui, sans-serif; text-decoration: none; cursor: pointer;
       transition: transform .15s ease, box-shadow .15s ease;
     }
     .btn:active { transform: translateY(1px) scale(.99); }
     .btn svg { width: 22px; height: 22px; }
     .primary { background: var(--accent); color: var(--accent-ink); border: none; box-shadow: 0 10px 24px -10px var(--accent); }
-    .primary:hover { box-shadow: 0 14px 28px -10px var(--accent); }
     .secondary { background: transparent; color: var(--ink); border: 1.5px solid var(--border); margin-top: 10px; }
     .secondary:hover { border-color: var(--ink); }
 
-    .payee { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 16px; font-size: .9rem; color: var(--muted); flex-wrap: wrap; }
+    .payee { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 16px; font-size: .92rem; color: var(--muted); flex-wrap: wrap; }
     .payee code { font: 500 .9rem ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--ink); word-break: break-all; }
-    .copy { background: none; border: 1px solid var(--border); color: var(--ink); border-radius: 8px; padding: 4px 10px; font: 500 .8rem Inter, sans-serif; cursor: pointer; }
+    .copy { background: none; border: 1px solid var(--border); color: var(--ink); border-radius: 8px; padding: 4px 10px; font: 600 .8rem Mukta, sans-serif; cursor: pointer; }
 
-    /* QR: prominent on desktop, tucked away on phones (they tap the button) */
     .qr-box { margin-top: 20px; }
-    .qr-box summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: .9rem; list-style: none; text-align: center; }
+    .qr-box summary { cursor: pointer; color: var(--accent); font-weight: 700; font-size: .95rem; list-style: none; text-align: center; }
     .qr-box summary::-webkit-details-marker { display: none; }
-    .qr {
-      margin: 14px auto 6px; width: 200px; height: 200px; background: #fff; padding: 10px; border-radius: 14px;
-      border: 1px solid var(--border);
-    }
-    .qr img { width: 100%; height: 100%; display: block; }
+    .qr { margin: 14px auto 6px; width: 200px; height: 200px; background: #fff; padding: 10px; border-radius: 14px; border: 1px solid var(--border); }
+    .qr img { width: 100%; height: 100%; }
     .qr-hint { text-align: center; color: var(--muted); font-size: .85rem; margin: 0; }
+    .after { margin: 18px 0 0; font-size: .88rem; color: var(--muted); text-align: center; }
 
-    .after { margin-top: 18px; font-size: .85rem; color: var(--muted); text-align: center; }
+    /* ---------- Story sections ---------- */
+    .sections { max-width: 1080px; margin: 0 auto; padding: 0 16px 40px; display: grid; gap: 24px; }
+    .panel { background: var(--paper); border: 1px solid var(--border); border-radius: 22px; padding: 26px 22px; }
+    @media (min-width: 880px) { .panel { padding: 36px 40px; } }
+    .panel h2 { font-family: "Tiro Devanagari Marathi", Georgia, serif; font-weight: 400; font-size: 1.6rem; margin: 0; }
+    .panel .en { color: var(--muted); font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 16px; }
+    .about p { font-family: "Tiro Devanagari Marathi", Georgia, serif; font-size: 1.08rem; line-height: 1.85; margin: 0 0 14px; }
+    .about .body p:last-child { margin-bottom: 0; }
+    .about .summary-en { font-family: Mukta, sans-serif; color: var(--muted); font-size: 1rem; border-left: 3px solid var(--accent); padding-left: 14px; margin-bottom: 20px; }
+    @media (min-width: 880px) { .about .body { columns: 2; column-gap: 40px; } .about .body p { break-inside: avoid; } }
 
-    footer { text-align: center; color: var(--muted); font-size: .8rem; padding: 0 16px 28px; }
+    .author { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+    .author img {
+      width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: center 30%;
+      border: 3px solid var(--paper); box-shadow: 0 0 0 2px var(--accent);
+    }
+    .author .who { flex: 1; min-width: 200px; }
+    .author .name { font-family: "Tiro Devanagari Marathi", Georgia, serif; font-size: 1.5rem; margin: 0; line-height: 1.2; }
+    .author .name-en { color: var(--muted); font-weight: 600; margin: 0 0 6px; }
+    .author .bio { margin: 0; }
 
+    .quote-panel { text-align: center; }
+    .quote-panel svg { width: 120px; margin: 0 auto 10px; display: block; color: var(--accent); }
+    .quote-panel .wheel-s { transform-box: fill-box; transform-origin: center; animation: spin 3s linear infinite; }
+    .quote { font-family: Kalam, cursive; font-size: clamp(1.3rem, 4.8vw, 1.7rem); line-height: 1.35; margin: 0; }
+    .quote-by { margin: 10px 0 0; color: var(--muted); font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; }
 
-    /* Sticky pay bar on phones, hidden once the main button is on screen */
+    footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 0 16px 28px; }
+
+    /* ---------- Sticky pay bar (phones) ---------- */
     .sticky {
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
       display: flex; align-items: center; gap: 12px;
       padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
       background: var(--paper); border-top: 1px solid var(--border);
       box-shadow: 0 -10px 30px -12px rgba(0,0,0,.25);
-      transform: translateY(0); transition: transform .25s ease;
+      transition: transform .25s ease;
     }
     .sticky.hide { transform: translateY(110%); }
-    .sticky .price { font-size: 1.5rem; }
-    .sticky .btn { flex: 1; min-height: 46px; padding: 10px 14px; }
-    body { padding-bottom: 80px; }
-    @media (min-width: 860px) { .sticky { display: none; } body { padding-bottom: 0; } }
+    .sticky .price { font-size: 1.6rem; }
+    .sticky .btn { flex: 1; min-height: 46px; padding: 8px 14px; }
+    @media (min-width: 880px) { .sticky { display: none; } body { padding-bottom: 0; } }
+
+    /* ---------- Lightbox ---------- */
+    dialog { border: 0; padding: 0; background: transparent; max-width: min(92vw, 900px); }
+    dialog::backdrop { background: rgba(0,0,0,.8); }
+    dialog img { width: 100%; height: auto; border-radius: 12px; }
+    dialog button { position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,.6); color: #fff; border: 0; border-radius: 999px; width: 36px; height: 36px; font-size: 1.2rem; cursor: pointer; }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -196,66 +236,61 @@
   </style>
 </head>
 <body>
-  <!-- Animated riding scene -->
+  <!-- Coastal road to Kanyakumari -->
   <div class="scene" aria-hidden="true">
-    <div class="sun"></div>
-    <svg class="hills back" viewBox="0 0 1200 110" preserveAspectRatio="none">
-      <path fill="var(--leaf)" d="M0 110V60c80-40 160-50 240-20s170 30 250-10 160-40 260 0 180 40 250 10 150-40 200-20v90z"/>
+    <svg class="islet" viewBox="0 0 170 70" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 68c20-8 40-10 60-8s50 4 102 8"/>
+      <path d="M22 62V44h34v18M26 44c0-10 26-10 26 0M39 34v-6"/>
+      <path d="M112 62V40h16v22M116 40V20h8v20M120 20v-8"/>
+      <circle cx="120" cy="9" r="3"/>
     </svg>
-    <svg class="hills" viewBox="0 0 1200 110" preserveAspectRatio="none">
-      <path fill="var(--leaf)" d="M0 110V80c100-30 180-40 280-10s200 20 300-15 170-20 260 10 170 30 240 5 90-25 120-15v55z"/>
-    </svg>
+    <div class="sea"></div>
     <div class="road"></div>
+    <div class="milestone">कन्याकुमारी<b>0</b></div>
 
-    <svg class="rider" viewBox="0 0 170 110" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-      <!-- wheels -->
-      <g class="wheel"><circle cx="38" cy="78" r="26"/><path d="M38 52v52M12 78h52M20 60l36 36M56 60L20 96" stroke-width="1.5"/></g>
-      <g class="wheel"><circle cx="132" cy="78" r="26"/><path d="M132 52v52M106 78h52M114 60l36 36M150 60l-36 36" stroke-width="1.5"/></g>
-      <!-- frame -->
-      <path d="M38 78L66 44h50L82 78z" stroke="var(--accent)" stroke-width="5"/>
-      <path d="M82 78L60 34M116 44L132 78M112 32l6 14" stroke="var(--accent)" stroke-width="5"/>
-      <path d="M52 32h16M106 30h14" stroke-width="5"/>
-      <!-- crank -->
-      <g class="pedal"><path d="M82 78l10 8M82 78l-10-8" stroke-width="3"/></g>
-      <circle cx="82" cy="78" r="5" fill="var(--ink)"/>
-      <!-- rider -->
-      <path d="M60 30L90 16" stroke-width="6"/>
-      <path d="M90 16l22 14" stroke-width="4"/>
-      <path d="M62 32l12 22 8 24" stroke-width="5"/>
-      <circle cx="98" cy="10" r="8" fill="var(--ink)" stroke="none"/>
+    <svg class="rider" viewBox="0 0 170 110" fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+      <g class="wheel"><circle cx="38" cy="80" r="25"/><path d="M38 55v50M13 80h50M20 62l36 36M56 62L20 98" stroke-width="1.2"/></g>
+      <g class="wheel"><circle cx="132" cy="80" r="25"/><path d="M132 55v50M107 80h50M114 62l36 36M150 62l-36 36" stroke-width="1.2"/></g>
+      <path d="M38 80L66 46h48L84 80z"/>
+      <path d="M84 80L62 38M114 46l18 34M110 34l6 12M54 36h16"/>
+      <path d="M108 32q10-4 12 6"/>
+      <rect x="40" y="46" width="22" height="18" rx="4" fill="var(--ink)" stroke="none"/>
+      <path d="M64 36L88 18" stroke="var(--sea)" stroke-width="9"/>
+      <path d="M88 18l20 14" stroke="var(--sea)" stroke-width="4.5"/>
+      <path d="M64 38l14 18 6 22" stroke-width="5.5"/>
+      <circle cx="96" cy="10" r="7.5" fill="var(--ink)" stroke="none"/>
     </svg>
   </div>
 
   <div class="wrap">
-    <!-- Quote -->
-    <section class="book-col" aria-label="Quote">
-      <figure class="quote-card" style="margin:0">
-        <svg viewBox="0 0 170 90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <g class="wheel-s"><circle cx="36" cy="62" r="24"/><path d="M36 38v48M12 62h48" stroke-width="1.5"/></g>
-          <g class="wheel-s"><circle cx="134" cy="62" r="24"/><path d="M134 38v48M110 62h48" stroke-width="1.5"/></g>
-          <path d="M36 62L62 30h50L80 62z"/><path d="M80 62L58 20M112 30l22 32M108 18l6 12M50 18h16M102 16h14"/>
-        </svg>
-        <blockquote class="quote" style="margin:0">“Every road has a story. You just have to pedal far enough to hear it.”</blockquote>
-        <figcaption class="quote-by">Stories from the saddle</figcaption>
-      </figure>
+    <!-- Covers -->
+    <section class="cover-col" aria-label="Book cover">
+      <button class="cover" id="cover" type="button" aria-label="Enlarge cover">
+        <img id="cover-img" src="img/cover-front.jpg" width="1254" height="1254"
+             alt="ऑल India परमिट front cover: a cyclist on a coastal road near Kanyakumari, by Sudhakar Pawar">
+      </button>
+      <div class="tabs" role="group" aria-label="Cover side">
+        <button type="button" data-side="front" aria-pressed="true">मुखपृष्ठ · Front</button>
+        <button type="button" data-side="back" aria-pressed="false">मलपृष्ठ · Back</button>
+      </div>
     </section>
 
     <!-- Purchase -->
     <section class="card" aria-labelledby="h">
-      <p class="eyebrow">New book · Cycling stories</p>
-      <h1 id="h">All India Permit</h1>
-      <p class="byline">by Sudhakar Pawar</p>
-      <p class="blurb">True tales of climbs, crashes, long highways and the people met along the way. Written for anyone who has ever felt the wind on two wheels.</p>
+      <p class="eyebrow">नवीन पुस्तक · New book</p>
+      <h1 id="h">ऑल India परमिट</h1>
+      <p class="subtitle">मुलखावेगळ्या अनुभवांच्या जगावेगळ्या कथा</p>
+      <p class="byline">सुधाकर पवार · Sudhakar Pawar</p>
 
-      <ul class="features">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Real rides, real roads, real people</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>For beginners and seasoned riders alike</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Pay securely with Google Pay or any UPI app</li>
-      </ul>
+      <div class="stats">
+        <div class="stat"><b>21,000</b><span>किमी · km on a cycle</span></div>
+        <div class="stat"><b>भारतभर</b><span>India &amp; beyond</span></div>
+        <div class="stat"><b>घाट ते किनारे</b><span>Ghats to coasts</span></div>
+      </div>
 
       <div class="price-row">
         <span class="price">₹260</span>
-        <span class="price-label">One copy · UPI</span>
+        <span class="price-label">एक प्रत · One copy<br>UPI / Google Pay</span>
       </div>
 
       <a class="btn primary" id="gpay" href="#">
@@ -270,12 +305,54 @@
       </div>
 
       <details class="qr-box" id="qrbox">
-        <summary>Show QR code to scan</summary>
+        <summary>QR कोड दाखवा · Show QR code</summary>
         <div class="qr"><img src="upi-qr.svg" alt="UPI QR code to pay ₹260 to Sudhakar Pawar" width="200" height="200"></div>
         <p class="qr-hint">Scan with Google Pay, PhonePe, Paytm or any UPI app.</p>
       </details>
 
-      <p class="after">After paying, share the payment screenshot with Sudhakar to receive your copy.</p>
+      <p class="after">पैसे भरल्यानंतर पेमेंटचा स्क्रीनशॉट पाठवा.<br>After paying, share the payment screenshot to receive your copy.</p>
+    </section>
+  </div>
+
+  <div class="sections">
+    <!-- About the book (text from the back cover) -->
+    <section class="panel about" aria-labelledby="about-h">
+      <h2 id="about-h">पुस्तकाबद्दल</h2>
+      <p class="en">About the book</p>
+      <p class="summary-en">A true account of an extraordinary 21,000 km bicycle journey across India and beyond, through its people, cultures, languages, traditions and landscapes.</p>
+      <div class="body">
+        <p><strong>ऑल INDIA परमिट</strong> हे भारतभर व भारताबाहेर सायकलवरून केलेल्या एका विलक्षण प्रवासाचं अनुभवकथन आहे. बहुरंगी–बहुढंगी माणसं, संस्कृती, भाषा, परंपरा आणि निसर्ग यांच्या सहवासात आलेल्या मुलखावेगळ्या अनुभवांचा हा संग्रह आहे.</p>
+        <p>हा प्रवास केवळ एका ठिकाणाहून दुसऱ्या ठिकाणी जाण्याचा नव्हता, तर भारताला जवळून जाणून घेण्याचा आणि त्याच्या विविधतेचा अनुभव घेण्याचा होता.</p>
+        <p>२१,००० किलोमीटरच्या या सायकल प्रवासात लेखकानं डोंगर, घाट, दऱ्या, जंगले, समुद्रकिनारे आणि कित्येक महानगरं ओलांडली. वाटेत भेटलेली असंख्य सामान्य माणसंच त्यांच्या या प्रवासाचे खरे सहप्रवासी होते.</p>
+        <p>कधी मुसळधार पाऊस, कधी कडाक्याची थंडी, कधी रखरखतं ऊन, तर कधी निर्जन रस्त्यांवरील एकाकीपण अशा अनेक आव्हानांवर मात करत हा प्रवास पुढे सरकत राहिला. अनेक प्रसंगांनी धैर्याची परीक्षा घेतली, तर काही भेटींनी माणुसकीवरील विश्वास अधिक दृढ केला.</p>
+        <p>या पुस्तकातील कथा केवळ सायकलिंगच्या कथा नाहीत, तर त्या भारताच्या मातीच्या, तिच्या माणसांच्या, त्यांच्या संघर्षांच्या, स्वप्नांच्या आणि जगण्याच्या आहेत. दोन चाकांवरून केलेली ही भटकंती वाचकाला भारताच्या असंख्य रंगांची, भावनांची आणि जीवनमूल्यांची सफर घडवते.</p>
+        <p>हे पुस्तक साहस, प्रवास, आत्मशोध आणि मानवी संवेदनांच्या शोधात निघालेल्या प्रत्येक वाचकासाठी प्रेरणादायी ठरेल.</p>
+      </div>
+    </section>
+
+    <!-- Author -->
+    <section class="panel" aria-labelledby="author-h">
+      <h2 id="author-h">लेखक</h2>
+      <p class="en">About the author</p>
+      <div class="author">
+        <img src="img/author.jpg" width="132" height="180" alt="Sudhakar Pawar in a cycling helmet and sunglasses">
+        <div class="who">
+          <p class="name">सुधाकर पवार</p>
+          <p class="name-en">Sudhakar Pawar</p>
+          <p class="bio">सायकलवरून २१,००० किलोमीटर भारतभर व भारताबाहेर प्रवास.<br>Cycled 21,000 km across India and beyond.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="panel quote-panel" aria-label="Quote">
+      <svg viewBox="0 0 170 90" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <g class="wheel-s"><circle cx="36" cy="62" r="24"/><path d="M36 38v48M12 62h48" stroke-width="1.5"/></g>
+        <g class="wheel-s"><circle cx="134" cy="62" r="24"/><path d="M134 38v48M110 62h48" stroke-width="1.5"/></g>
+        <path d="M36 62L62 30h50L80 62z"/><path d="M80 62L58 20M112 30l22 32M108 18l6 12M50 18h16M102 16h14"/>
+      </svg>
+      <p class="quote">“Every road has a story. You just have to pedal far enough to hear it.”</p>
+      <p class="quote-by">Stories from the saddle</p>
     </section>
   </div>
 
@@ -284,7 +361,12 @@
     <a class="btn primary" id="gpay-sticky" href="#">Buy with Google Pay</a>
   </div>
 
-  <footer>All India Permit · © Sudhakar Pawar</footer>
+  <dialog id="lightbox">
+    <button type="button" id="lb-close" aria-label="Close">×</button>
+    <img id="lb-img" src="img/cover-front.jpg" alt="">
+  </dialog>
+
+  <footer>ऑल India परमिट · © सुधाकर पवार</footer>
 
   <script>
     const PARAMS = "pa=9850672020@ybl&pn=Sudhakar%20Pawar&am=260.00&cu=INR&tn=All%20India%20Permit";
@@ -313,7 +395,7 @@
     if (!isMobile) {
       const box = document.getElementById("qrbox");
       box.open = true;
-      box.querySelector("summary").textContent = "Scan with your phone to pay";
+      box.querySelector("summary").textContent = "फोनने स्कॅन करा · Scan with your phone to pay";
       for (const id of ["gpay", "upi", "gpay-sticky"]) {
         document.getElementById(id).addEventListener("click", (e) => {
           e.preventDefault();
@@ -321,6 +403,33 @@
         });
       }
     }
+
+    // Front / back cover toggle
+    const COVERS = {
+      front: { src: "img/cover-front.jpg", alt: "ऑल India परमिट front cover: a cyclist on a coastal road near Kanyakumari, by Sudhakar Pawar" },
+      back: { src: "img/cover-back.jpg", alt: "ऑल India परमिट back cover with the book description and author photo" },
+    };
+    const coverImg = document.getElementById("cover-img");
+    const tabs = document.querySelectorAll(".tabs button");
+    tabs.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const side = COVERS[btn.dataset.side];
+        coverImg.src = side.src;
+        coverImg.alt = side.alt;
+        tabs.forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+      });
+    });
+
+    // Tap cover to enlarge
+    const lightbox = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lb-img");
+    document.getElementById("cover").addEventListener("click", () => {
+      lbImg.src = coverImg.src;
+      lbImg.alt = coverImg.alt;
+      lightbox.showModal();
+    });
+    document.getElementById("lb-close").addEventListener("click", () => lightbox.close());
+    lightbox.addEventListener("click", (e) => { if (e.target === lightbox) lightbox.close(); });
 
     document.getElementById("copy").addEventListener("click", async (e) => {
       try {
